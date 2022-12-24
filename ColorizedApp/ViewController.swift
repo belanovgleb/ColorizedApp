@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet var greenLabel: UILabel!
     @IBOutlet var blueLabel: UILabel!
     
+   
     @IBOutlet var redSlider: UISlider!
     @IBOutlet var greenSlider: UISlider!
     @IBOutlet var blueSlider: UISlider!
@@ -22,26 +23,34 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        
+        colorTracker.layer.cornerRadius = 10
         
     }
 
-    // Mark 1 - setup sliders:
-    
-     @IBAction func greenSliderAction() {
-         greenLabel.text = String(format: "%.2f", greenSlider.value)
-         colorTracker.backgroundColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: CGFloat(greenSlider.value))
-    }
     
     @IBAction func redSliderAction() {
         redLabel.text = String(format: "%.2f", redSlider.value)
-        colorTracker.backgroundColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: CGFloat(redSlider.value))
+        colorTracker.backgroundColor = UIColor(red: CGFloat(redSlider.value),
+                                               green: CGFloat(greenSlider.value),
+                                               blue: CGFloat(blueSlider.value),
+                                               alpha: CGFloat(redSlider.value))
     }
+    
+    @IBAction func greenSliderAction() {
+        greenLabel.text = String(format: "%.2f", greenSlider.value)
+        colorTracker.backgroundColor = UIColor(red: CGFloat(redSlider.value),
+                                               green: CGFloat(greenSlider.value),
+                                               blue: CGFloat(blueSlider.value),
+                                               alpha: CGFloat(greenSlider.value))
+   }
     
     @IBAction func blueSliderAction() {
         blueLabel.text = String(format: "%.2f", blueSlider.value)
         colorTracker.backgroundColor = blueSlider.minimumTrackTintColor
-        colorTracker.backgroundColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: CGFloat(blueSlider.value))
+        colorTracker.backgroundColor = UIColor(red: CGFloat(redSlider.value),
+                                               green: CGFloat(greenSlider.value),
+                                               blue: CGFloat(blueSlider.value),
+                                               alpha: CGFloat(blueSlider.value))
     }
 }
 
