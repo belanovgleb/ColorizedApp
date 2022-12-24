@@ -52,5 +52,6 @@ class ViewController: UIViewController {
                                                blue: CGFloat(blueSlider.value),
                                                alpha: CGFloat(blueSlider.value))
     }
+    
 }
 
